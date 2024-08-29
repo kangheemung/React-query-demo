@@ -3,6 +3,7 @@ import './App.css';
 import {Routes,Route,Link} from "react-router-dom";
 import HomePage from "./HomePage";
 import ReactQueryPage from "./ReactQueryPage";
+import Nomalfetch from './Nomalfetch';
 
 function App() {
   return (
@@ -14,10 +15,14 @@ function App() {
         <Link className="no-underline"to= "/react-query" >
         react-query
         </Link>
+        <Link className="no-underline"to= "/nomalfetch" >
+         Nomalfetch
+        </Link>
       </nav>
       <Routes>
         <Route path="/" element={ <HomePage />}/>
         <Route path="/react-query" element={ <ReactQueryPage />}/>
+        <Route path="/nomalfetch" element={ <Nomalfetch/>}/>
       </Routes>
 
     </div>

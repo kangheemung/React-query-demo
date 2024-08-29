@@ -13,9 +13,12 @@ const ReactQueryPage = () => {
     //각각의 API의 이름을 정한다.
     queryFn: fetchPost,
     retry: 1,
+    staleTime: 10000, //apiを呼ぶ時の時間//기본값 0
+    //api를 부를때의 시간 /staleTime< gcTime
     select:(data)=>{
         return data.data;
-    }
+    },
+        gcTime: 5000,//기본값 5분 캐쉬 가져가는 시간
     });
     console.log("ddd",data,isLoading);
     console.log("earror",isError,error);
@@ -23,7 +26,7 @@ const ReactQueryPage = () => {
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
-    
+
     if (isError) {
         return <h1>{error.message}</h1>;
     }
